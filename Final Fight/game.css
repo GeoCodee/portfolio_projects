@@ -1,0 +1,463 @@
+@charset "utf-8";
+/* CSS Document */
+
+    @font-face {font-family: "Runic MT W01 Condensed";
+        src: url("fonts/a6949241929f3860cf25435f2cb49311.eot");
+        src: url("fonts/a6949241929f3860cf25435f2cb49311.eot?#iefix") format("embedded-opentype"),
+        url("fonts/a6949241929f3860cf25435f2cb49311.woff2") format("woff2"),
+        url("fonts/a6949241929f3860cf25435f2cb49311.woff") format("woff"),
+        url("fonts/a6949241929f3860cf25435f2cb49311.ttf") format("truetype"),
+        url("fonts/a6949241929f3860cf25435f2cb49311.svg#Runic MT W01 Condensed") format("svg");
+    }
+
+    body, html {
+        width: 100%;
+        margin: 0;
+        font-family: 'Libre Baskerville', sans-serif;
+		font-size: 17px;
+        padding: 0px;
+        overflow-x: hidden;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    nav h3, aside h2, main h2, footer h5, figure h3 {display: none;}
+
+    header {
+        height: 300px;
+        display: flex;
+        font-family:"Runic MT W01 Condensed";
+        color: white;
+        font-size: 60px;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        background-image: url("images/bustersword.jpg");
+        background-position: bottom right;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #chocobo {
+        position: absolute;
+        height: 90px;
+        z-index: 2;
+        animation-name: movechocobo;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes movechocobo {
+        from {left: 0px;}
+        to {left: 1240px;}
+    }
+
+    nav {
+        height: 100px;
+        display: flex;
+        background-image: url("images/fieldbg.jpg");
+        background-position: center;
+        font-family:"Runic MT W01 Condensed";
+        font-size: 40px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    nav a {
+        margin:0px 50px;
+        text-decoration: none;
+        padding: 25px;
+    }
+
+    nav a:hover {
+        background-color: black;
+        background: rgba(0,0,0,0.2);
+
+    }
+
+    aside {
+        text-align: center;
+    }
+
+    #gameinfo {
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("images/gameinfobg.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #gameinfodiv {
+        background-color: white;
+        background: rgba(255,255,255,0.3);
+        color: black;
+        font-size: 16px;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    #gameinfodiv:hover {
+        background-color: black;
+        color: white;
+        background: rgba(0,0,0,0.5);
+    }
+
+    #gameinfodiv select, audio {
+        position: relative;
+        vertical-align: middle;
+    }
+
+    main {
+        height: 800px;
+    }
+
+    main #boss {
+        float: right;
+        width: 45%;
+        height: 25%;
+        display: block;
+        box-sizing: border-box;
+        background-image: url("images/kefka.jpg");
+        background-position: top 25% left 40%;
+        background-repeat: no-repeat;
+    }
+
+    main #battle {
+        float: right;
+        width: 45%;
+        height: 75%;
+        display: block;
+        box-sizing: border-box;
+        background-image: url("images/battlebg.png");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .heropixels {
+        position: relative;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .heropixel1 {
+        left: 0px;
+    }
+
+    .heropixel2 {
+        left: 10px;
+        top: -20px;
+    }
+
+    .heropixel3 {
+        left: 30px;
+        top: -20px;
+    }
+
+    .heropixel4 {
+        left: -20px;
+        top: -90px;
+    }
+
+    #heropixel1 {
+        height: 150px;
+    }
+
+    #heropixel2 {
+        height: 180px;
+    }
+
+    #heropixel3 {
+        height: 140px;
+    }
+
+    #heropixel4 {
+        height: 250px;
+    }
+
+    #bosspixeldiv {
+        position: relative;
+        right: -250px;
+        top: -650px;
+    }
+
+    #bosspixel {
+        height: 350px;
+    }
+
+    main .heroes {
+        float: left;
+        width: 55%;
+        height: 25%;
+        font-family: 'Lato', sans-serif;
+        color: white;
+        font-size: 20px;
+        display: block;
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+    }
+
+    .hero1 {
+        background-image: url("images/cloud.jpg");
+        background-position: top 18% left 25%;
+    }
+
+    .hero2 {
+        background-image: url("images/trish.jpg");
+        background-position: top 17% left 0%;
+    }
+
+    .hero3 {
+        background-image: url("images/ryu.jpg");
+        background-position: top 15% left 40%;
+    }
+
+    .hero4 {
+        background-image: url("images/mercy.jpg");
+        background-position: top 25% left 30%;
+    }
+
+    main section input {
+        margin: 10px 10px 10px 10px;
+    }
+
+    .healthdiv {
+        position: absolute;
+        left: 250px;
+        z-index: 1;
+    }
+
+    .health1 {
+        top: 655px;
+    }
+
+    .health2 {
+        top: 855px;
+    }
+
+    .health3 {
+        top: 1055px;
+    }
+
+    .health4 {
+        top: 1255px;
+    }
+
+    .herohealth, #bosshealth {
+        width: 400px;
+        z-index: 1;
+    }
+
+    #boss {
+        font-size: 100px;
+        color: white;
+    }
+
+    #bossdiv {
+        position: relative;
+        top: -58px;
+        left: 10px;
+    }
+
+    #kefka {
+        position: relative;
+        top: -30px;
+        left: 20px;
+        font-family: 'Modern Antiqua', cursive;
+    }
+
+    #bosshealth {
+        width: 380px;
+        z-index: 1;
+    }
+
+    #attack {
+        margin-right: 100px;
+    }
+
+    #elementhover{
+        display: none;
+        position: absolute;
+        top: 900px;
+        left: 335px;
+        background-color: white;
+        background: rgba(255,255,255,0.8);
+        color: black;
+        font-size: 16px;
+        width: 250px;
+        padding: 20px;
+        z-index: 2;
+    }
+
+    #red {color: red;}
+    #orange {color: orange;}
+    #purple {color: purple;}
+    #blue {color: blue;}
+    #lightblue {color: lightblue;}
+    #green {color: green;}
+    #yellow {color: yellow;}
+    #white {color: white;}
+
+    #percenthover{
+        display: none;
+        position: absolute;
+        top: 1105px;
+        left: 420px;
+        background-color: white;
+        background: rgba(255,255,255,0.8);
+        color: black;
+        font-size: 16px;
+        width: 250px;
+        padding: 20px;
+        z-index: 2;
+    }
+
+    #targethover{
+        display: none;
+        position: absolute;
+        top: 1340px;
+        left: 350px;
+        background-color: white;
+        background: rgba(255,255,255,0.8);
+        color: black;
+        font-size: 16px;
+        width: 250px;
+        padding: 20px;
+        z-index: 2;
+    }
+
+    #target, #element, #percent {
+        position: relative;
+        vertical-align: middle;
+        z-index: 2;
+    }
+
+    #target:hover + #targethover, #element:hover + #elementhover, #percent:hover + #percenthover{
+        display: block;
+    }
+
+    #userinfo {
+        height: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #d5f3ff;
+        color: #161637;
+    }
+
+    input[type="submit"] {
+        text-transform: uppercase;
+        font-family: 'Lato', sans-serif;
+        font-size: 40px;
+        color: white;
+        padding: 10px 20px;
+        background-color: firebrick;
+        border-radius: 10px;
+        transition-duration: 0s;
+    }
+
+    input[type="submit"]:hover {
+
+    }
+
+    input[type="email"], #userinfo input[type="text"] {
+        background-color: white;
+    }
+
+    input[type="email"]:invalid, #userinfo input[type="text"]:invalid {
+        background-color: red;
+    }
+
+    .creditcards {
+        width: 75px;
+    }
+
+    footer {
+        background-color: whitesmoke;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer h3, footer h4 {
+        text-align: center;
+    }
+
+    #ealogo {
+        width: 150px;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    #audioplayer {
+        border: none;
+        outline: none;
+    }
+
+    .resultnames {
+        font-family:"Runic MT W01 Condensed";
+        color: white;
+        font-size: 100px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+
+    #resultstextwin {
+        font-family:"Runic MT W01 Condensed";
+        color: red;
+        font-size: 150px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+
+    #resultstextlose {
+        font-family: 'Modern Antiqua', cursive;
+        color: mediumpurple;
+        font-size: 130px;
+        text-transform: uppercase;
+    }
+
+    #bosspixelwin {
+        height: 350px;
+        filter: brightness(50%);
+    }
+
+    #heropixel1lose {
+        height: 150px;
+        filter: brightness(50%);
+    }
+
+    #heropixel2lose {
+        height: 180px;
+        filter: brightness(50%);
+    }
+
+    #heropixel3lose {
+        height: 140px;
+        filter: brightness(50%);
+    }
+
+    #heropixel4lose {
+        height: 250px;
+        filter: brightness(50%);
+    }
+
+    figure {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px;
+        background-color: orchid;
+
+    }
+
+    figure img{
+        width: 750px;
+        box-shadow: 12px 0 17px -7px black, -12px 0 17px -7px black;
+    }

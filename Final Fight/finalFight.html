@@ -1,0 +1,325 @@
+<!-- Description
+This assignment is in combination with Assignment 3 on HTML so is with the same GROUP.
+Make and publish a Web form on your Sheridan Web space according to the learnings in Module 3 and Module 4.
+
+Topic
+The topic is to make the form portion of a game or app including at least one form page
+and a results page and a remote CSS page (could be the same page as for Assignment 3)
+The data for the form will not be collected or processed. So you are hard-coding a results page
+that demonstrates what the results would be like. If you choose a game, it might be a text adventure type game
+with several form and result pages, an avatar creation portion of a game, etc.
+
+Requirements
+The INFO page from Assignment 3 will have all the necessary details
+You OR your partner will submit an INFO page to Slate by the due date and time with the folling information:
+
+1. The game or app title
+2. Your name and your partner name
+3. The URL to the game or app on the sheridan server
+   (The site should include both Assignment 3 and 4)
+4. Any instructions to help understand the game or app -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Final Fight</title>
+
+        <link rel="stylesheet" href="game.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Libre Baskerville' rel='stylesheet'>
+
+        <script>
+
+            // Not Currently Working
+            // $(document).ready(function() {
+            //     $('#selection').on('change', function() {
+            //         change($(this).val());
+            //     });
+            // });
+            //
+            // function change(sourceUrl) {
+            //     var audio = document.getElementById("audioplayer");
+            //     var source = document.getElementById("battlemusic");
+            //     var song = document.getElementById("songtrack").value;
+            //
+            //     audio.pause();
+            //
+            //     if (song) {
+            //         source.src = song;
+            //         audio.load();
+            //         audio.play();
+            //     }
+            // }
+
+            window.addEventListener("DOMContentLoaded", () => {
+
+                const submit = document.getElementById("submit");
+
+                const action2 = document.getElementById("action2");
+                const action6 = document.getElementById("action6");
+                const action10 = document.getElementById("action10");
+                const action14 = document.getElementById("action14");
+
+                submit.addEventListener("click", e => {
+
+                    // F12 to see console
+                    // console.log(test.value);
+
+                    if (numofplayers.value == 4 && action2.checked  && action6.checked && action10.checked && action14.checked) {
+                        // put a page that you make here
+                        document.location = "defeat.html";
+                    } else {
+                        // put a different page that you make here
+                        document.location = "victory.html";
+                    }
+                    e.preventDefault();
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <h1>Final Fight</h1>
+        </header>
+
+            <img id="chocobo" src="images/chocobo.gif" alt="chocobo">
+
+        <nav>
+            <h3>Navigation for Final Fight</h3>
+            <a rel="noopener" href="index.html"> Home </a>
+            <a rel="noopener" href="instructions.html"> Instructions </a>
+            <a rel="noopener" href="about.html"> About </a>
+        </nav>
+
+        <form action="victory.html" method="get">
+
+
+
+        <aside id="gameinfo">
+            <h2>Game Information Inputs</h2>
+            <div id="gameinfodiv">
+
+                Number of players in party:
+                <input type="number" id="numofplayers" name="numofplayers" value="1" max="4" min="1">
+                <br><br>
+
+                Select characters in party (press CTRL for multiple characters):
+                <select id="characters" name="characters" multiple size="4">
+                    <option value="">Swordsman</option>
+                    <option value="">Mage</option>
+                    <option value="">Fighter</option>
+                    <option value="">Healer</option>
+                </select>
+                <br><br>
+
+                Select music for battle:
+                <select id="songtrack" name="songtrack">
+                    <option value="music/dancingmad.mp3">Dancing Mad</option>
+                    <option value="music/frankensteinmonster.mp3">Frankenstein's Monster</option>
+                    <option value="music/onewingedangel.mp3">One Winged Angel</option>
+                    <option value="music/red.mp3">Red</option>
+                    <option value="music/theopenedway.mp3">The Opened Way</option>
+                </select>
+                <audio id="audioplayer" controls>
+                    <source id="battlemusic" type="audio/mp3">
+                        Your browser can not play this.
+                    </audio>
+
+                </div>
+        </aside>
+
+        <main>
+            <h2>Final Fight Game</h2>
+            <section class="heroes hero1">
+                &nbsp;&nbsp;&nbsp; Name <input type="text" id="name1" name="name1">
+                <div class="healthdiv health1"><img class="herohealth" src="images/herohealth.png" alt="health bar"></div>
+                <br>
+                <input type="radio" id="action1" name="action1" value="attack"> Attack
+                <select id="attack1" name="attack1">
+                    <option value="met">Meteor Slash</option>
+                    <option value="bla">Blade Beam</option>
+                    <option value="cros">Cross Slash</option>
+                    <option value=cli"">Climhazzard</option>
+                </select>
+                <br>
+                <input type="radio" id="action2" name="action1" value="defend"> Defend<br>
+                <input type="radio" id="action3" name="action1" value="ultimate"> Ultimate
+                <select id="special1" name="special1">
+                    <option value="lim">Limit Break</option>
+                    <option value="omni">Omnislash</option>
+                </select>
+                <br>
+                <input type="radio" id="action4" name="action1" value="items"> Items
+                <select id="item1" name="item1">
+                    <option value="pot">Potion</option>
+                    <option value="spot">Super Potion</option>
+                    <option value="hpot">Hyper Potion</option>
+                    <option value="fhul">Full Heal</option>
+                </select>
+            </section>
+
+            <section id="boss">
+                <div id="bossdiv"><img id="bosshealth" src="images/bosshealth.png" alt="health bar"></div>
+                <div id="kefka">Kefka</div>
+            </section>
+
+            <section class="heroes hero2">
+                &nbsp;&nbsp;&nbsp; Name <input type="text" id="name2" name="name2">
+                <div class="healthdiv health2"><img class="herohealth" src="images/herohealth.png" alt="health bar"></div>
+                <br>
+                <input type="radio" id="action5" name="action2" value="attack"> Attack
+                <select id="attack2" name="attack2">
+                    <option value="sto">Elemental Storm</option>
+                    <option value="rai">Elemental Projection</option>
+                    <option value="ball">Fire Rain</option>
+                    <option value="tele">Teleport</option>
+                </select>
+                <input type="color" id="element" name="element" value="#ff0000">
+                <div id="elementhover">
+                    When <strong>Elemental Storm</strong> or <strong>Elemental Projection</strong> is selected, choose color corresponding to element type <br><br>
+                    <span id="red">Red</span>/<span id="orange">Orange</span> - Fire &nbsp;&nbsp;&nbsp; <span id="purple">Purple</span> - Poison <br>
+                    <span id="blue">Blue</span> - Water &nbsp;&nbsp;&nbsp; <span id="lightblue">Light Blue</span> - Wind <br>
+                    <span id="green">Green</span> - Earth &nbsp;&nbsp;&nbsp; <span id="yellow">Yellow</span> - Light <br>
+                    <strong>Black</strong> - Darkness &nbsp;&nbsp;&nbsp; <span id="white">White</span> - Ice <br>
+                </div>
+                <br>
+                <input type="radio" id="action6" name="action2" value="defend"> Defend<br>
+                <input type="radio" id="action7" name="action2" value="ultimate"> Ultimate
+                <select id="special2" name="special2">
+                    <option value="alz">Alzur's Shield</option>
+                    <option value="hel">Merigold's Hailstorm</option>
+                </select>
+                <br>
+                <input type="radio" id="action8" name="action2" value="items"> Items
+                <select id="item2" name="item2">
+                    <option value="pot">Potion</option>
+                    <option value="spot">Super Potion</option>
+                    <option value="hpot">Hyper Potion</option>
+                    <option value="fhul">Full Heal</option>
+                </select>
+            </section>
+
+            <section id="battle">
+                <div class="heropixels heropixel1"><img id="heropixel1" src="images/cloudpixel.png" alt="cloud pixel"></div>
+                <div class="heropixels heropixel2"><img id="heropixel2" src="images/trisspixel.png" alt="triss pixel"></div>
+                <div class="heropixels heropixel3"><img id="heropixel3" src="images/ryupixel.gif" alt="ryu pixel"></div>
+                <div class="heropixels heropixel4"><img id="heropixel4" src="images/mercypixel.png" alt="mercy pixel"></div>
+                <div id="bosspixeldiv"><img id="bosspixel" src="images/kefkapixel.png" alt="kefka pixel"></div>
+            </section>
+
+            <section class="heroes hero3">
+                &nbsp;&nbsp;&nbsp; Name <input type="text" id="name3" name="name3">
+                <div class="healthdiv health3"><img class="herohealth" src="images/herohealth.png" alt="health bar"></div>
+                <br>
+                <input type="radio" id="action9" name="action3" value="attack"> Attack
+                <select id="attack3" name="attack3">
+                    <option value="sho">Shoryuken</option>
+                    <option value="tat">Tatsumaki Senpukyaku</option>
+                    <option value="had">Hadoken</option>
+                    <option value="jou">Joudan Sokutageri</option>
+                </select>
+                <br>
+                <input type="radio" id="action10" name="action3" value="defend"> Defend<br>
+                <input type="radio" id="action11" name="action3" value="ultimate"> Ultimate
+                <select id="special3" name="special3">
+                    <option value="oni">Oni Transformation</option>
+                    <option value="shin">Shinku Hadoken</option>
+                </select>
+                <input type="range" id="percent" name="percent" value="10" min="10" max="90" step="10">
+                <div id="percenthover">
+                    If <strong>Oni Transformation</strong> is selected, a percentage of remaining health is sacrificed to increase stats<br><br>
+                    Percentage of health sacrificed ranges from <strong>10%</strong> to <strong>90%</strong> in increments of 10. Sacrifice more health for maximum power!
+                </div>
+                <br>
+                <input type="radio" id="action12" name="action3" value="items"> Items
+                <select id="item3" name="item3">
+                    <option value="pot">Potion</option>
+                    <option value="spot">Super Potion</option>
+                    <option value="hpot">Hyper Potion</option>
+                    <option value="fhul">Full Heal</option>
+                </select>
+            </section class="heroes">
+
+            <section class="heroes hero4">
+                &nbsp;&nbsp;&nbsp; Name <input type="text" id="name4" name="name4">
+                <div class="healthdiv health4"><img class="herohealth" src="images/herohealth.png" alt="health bar"></div>
+                <br>
+                <input type="radio" id="action13" name="action4" value="attack"> Attack
+                <select id="attack4" name="attack4">
+                    <option value="gua">Guardian Angel</option>
+                    <option value="res">Resurrect</option>
+                    <option value="cad">Cadeceus Blaster</option>
+                    <option value="ang">Angelic Descent</option>
+                </select>
+                <select id="target" name="target">
+                    <option value="sword">Swordsman</option>
+                    <option value="mage">Mage</option>
+                    <option value="fight">Fighter</option>
+                    <option value="heal">Healer</option>
+                </select>
+                <div id="targethover">
+                    When <strong>Guardian Angel</strong> is selected, target any party member to heal <br><br>
+                    When <strong>Resurrect</strong> is selected, target other party members to revive. Cannot target yourself
+                </div>
+                <br>
+                <input type="radio" id="action14" name="action4" value="defend"> Defend<br>
+                <input type="radio" id="action15" name="action4" value="ultimate"> Ultimate
+                <select id="special4" name="special4">
+                    <option value="val">Valkyrie</option>
+                    <option value="hnd">Heroes Never Die</option>
+                </select>
+                <br>
+                <input type="radio" id="action16" name="action4" value="items"> Items
+                <select id="item4" name="item4">
+                    <option value="pot">Potion</option>
+                    <option value="spot">Super Potion</option>
+                    <option value="hpot">Hyper Potion</option>
+                    <option value="fhul">Full Heal</option>
+                </select>
+            </section>
+
+        </main>
+
+        <aside id="userinfo">
+            <h2>User Information Inputs</h2>
+            <div id="userinfodiv">
+
+                <input type="submit" id="submit" value="fight">
+                <br><br>
+
+                Enter email for game updates and special offers<br><br>
+                <input type="email" id="email" name="email" pattern=".+@[a-z]+\.[a-z]+" size="30">
+                <br><br><br>
+
+                Enter credit card information for full access to the game<br><br>
+                *<input type="radio" id="credit1" name="credit" value="mastercard" required> <img class="creditcards" src="images/mastercard.jpg" alt="mastercard">
+                <input type="radio" id="credit2" name="credit" value="visa"> <img class="creditcards" src="images/visa.jpg" alt="visa">
+                <input type="radio" id="credit3" name="credit" value="ae"> <img class="creditcards" src="images/amex.jpg" alt="american express">
+                <input type="radio" id="credit3" name="credit" value="discover"> <img class="creditcards" src="images/discover.jpg" alt="discover">
+                <br><br>
+
+                Credit Card Number * <input type="text" id="credit" name="credit" pattern="\d{4}[ ]?\d{4}[ ]?\d{4}[ ]?\d{4}" required>
+                &nbsp;&nbsp;Security Code * <input type="text" id="security" name="security" pattern="\d{3}" required>
+                &nbsp;&nbsp;Postal Code * <input type="text" id="postalcode" name="postalcode" pattern="[a-zA-Z]\d[a-zA-Z][ ]?\d[a-zA-Z]\d" required><br><br>
+                * Required
+
+            </div>
+
+        </aside>
+
+        </form>
+
+        <footer>
+            <h5>Footer for Final Fight</h5>
+            <div id="footerdiv">
+                <h3>Geoffrey Gabriel Fornoles and Timothy Quan &trade;</h3>
+                <h4>A subsidiary of <img id="ealogo" src="images/ealogo.png" alt="Electronic Arts logo"></h4>
+            </div>
+
+        </footer>
+
+    </body>
+</html>
