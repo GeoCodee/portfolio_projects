@@ -35,6 +35,8 @@
         background-position: bottom right;
         justify-content: center;
         align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     #chocobo {
@@ -42,13 +44,13 @@
         height: 90px;
         z-index: 2;
         animation-name: movechocobo;
-        animation-duration: 20s;
+        animation-duration: 15s;
         animation-iteration-count: infinite;
     }
 
     @keyframes movechocobo {
-        from {left: 0px;}
-        to {left: 1240px;}
+        from {left: -50px;}
+        to {left: 1350px;}
     }
 
     nav {
@@ -137,6 +139,7 @@
         background-image: url("images/battlebg.png");
         background-position: center;
         background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .heropixels {
@@ -182,7 +185,7 @@
 
     #bosspixeldiv {
         position: relative;
-        right: -250px;
+        right: -42%;
         top: -650px;
     }
 
@@ -350,23 +353,50 @@
         color: #161637;
     }
 
-    input[type="submit"] {
-        text-transform: uppercase;
-        font-family: 'Lato', sans-serif;
-        font-size: 40px;
-        color: white;
-        padding: 10px 20px;
-        background-color: firebrick;
-        border-radius: 10px;
-        transition-duration: 0s;
+    #submitbutton {
+        position: relative;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
     }
 
-    input[type="submit"]:hover {
+    input[type="submit"]{
+        color: transparent;
+        text-transform: uppercase;
+        font-family:"Runic MT W01 Condensed";
+        font-size: 60px;
+        padding: 0px 20px;
+        letter-spacing: 5px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+    }
 
+    #submitbutton:after {
+        text-transform: uppercase;
+        font-family:"Runic MT W01 Condensed";
+        font-size: 60px;
+        letter-spacing: 5px;
+        color: white;
+        padding: 0px 20px;
+        background-color: firebrick;
+        border-radius: 10px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        pointer-events: none;
+        content: "ready?"
+    }
+
+    #submitbutton:hover:after {
+        padding: 0px 26px;
+        background-color: green;
+        content: "fight!"
     }
 
     input[type="email"], #userinfo input[type="text"] {
         background-color: white;
+        font-size: 20px;
     }
 
     input[type="email"]:invalid, #userinfo input[type="text"]:invalid {
@@ -375,6 +405,7 @@
 
     .creditcards {
         width: 75px;
+        padding-right: 25px;
     }
 
     footer {
@@ -395,7 +426,7 @@
         vertical-align: middle;
     }
 
-    #audioplayer {
+    audio {
         border: none;
         outline: none;
     }
@@ -460,4 +491,79 @@
     figure img{
         width: 750px;
         box-shadow: 12px 0 17px -7px black, -12px 0 17px -7px black;
+    }
+
+    @media all and (min-width: 1920px){
+        body {
+            width: 100%;
+            height: 100%;
+            }
+        .heropixel1 {
+            left: 100px;
+        }
+
+        .heropixel2 {
+            left: 110px;
+        }
+
+        .heropixel3 {
+            left: 130px;
+        }
+
+        .heropixel4 {
+            left: 80px;
+        }
+
+        #bosspixeldiv {
+            position: relative;
+            right: -55%;
+        }
+
+        #chocobo {
+            animation-duration: 20s;
+        }
+
+        @keyframes movechocobo {
+            from {left: -50px;}
+            to {left: 1900px;}
+        }
+    }
+
+    @media all and (min-width: 2560px){
+        body {
+            width: 100%;
+            height: 100%;
+            }
+        .heropixel1 {
+            left: 200px;
+        }
+
+        .heropixel2 {
+            left: 210px;
+        }
+
+        .heropixel3 {
+            left: 230px;
+        }
+
+        .heropixel4 {
+            left: 180px;
+        }
+
+        #chocobo {
+            animation-duration: 20s;
+        }
+
+        @keyframes movechocobo {
+            from {left: -50px;}
+            to {left: 2540px;}
+        }
+
+        .hero4 {
+            background-size: cover;
+        }
+
+        main #boss {
+            background-size: cover;
+        }
     }
