@@ -2,8 +2,7 @@
 import random
 import hangman_art
 import hangman_words
-from replit import clear
-# from replit import clear
+
 
 word_list = hangman_words.word_list
 stages = hangman_art.stages
@@ -25,7 +24,7 @@ lives = 6
 while not end_game:
     guess = input("Guess a letter: ").lower()
 
-    clear()
+    
     if guess in display:
         print(f"You already guessed the letter, try another one. \n Wrong Guesses: {','.join(wrong_guess)}")
 
